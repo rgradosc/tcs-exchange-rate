@@ -1,0 +1,33 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.5.33424.131
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{7251F592-6386-4045-8BA7-A9E34D7F05BA}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Services", "Services", "{1351FA53-1FE1-4D08-B6C6-C8506BDBD390}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TCSExchangeRateAPI.Services.WebAPI", "src\Services\TCSExchangeRateAPI.Services.WebAPI\TCSExchangeRateAPI.Services.WebAPI.csproj", "{4304980F-DA21-4C7E-87B3-48D61EF99ED9}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{4304980F-DA21-4C7E-87B3-48D61EF99ED9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4304980F-DA21-4C7E-87B3-48D61EF99ED9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4304980F-DA21-4C7E-87B3-48D61EF99ED9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4304980F-DA21-4C7E-87B3-48D61EF99ED9}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{1351FA53-1FE1-4D08-B6C6-C8506BDBD390} = {7251F592-6386-4045-8BA7-A9E34D7F05BA}
+		{4304980F-DA21-4C7E-87B3-48D61EF99ED9} = {1351FA53-1FE1-4D08-B6C6-C8506BDBD390}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {960650A5-8386-4107-A901-FE7FB536F491}
+	EndGlobalSection
+EndGlobal

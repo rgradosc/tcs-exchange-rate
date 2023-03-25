@@ -1,4 +1,4 @@
-﻿using AutoMapper;
+using AutoMapper;
 using TCSExchangeRateAPI.Application.DTO;
 using TCSExchangeRateAPI.Domain.Entity;
 

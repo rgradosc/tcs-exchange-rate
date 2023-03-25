@@ -8,5 +8,5 @@
   <ItemGroup>
     <ProjectReference Include="..\..\Domain\TCSExchangeRateAPI.Domain.Entity\TCSExchangeRateAPI.Domain.Entity.csproj" />
   </ItemGroup>
-
+  
 </Project>

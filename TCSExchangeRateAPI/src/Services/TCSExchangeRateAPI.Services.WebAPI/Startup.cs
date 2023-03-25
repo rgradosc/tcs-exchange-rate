@@ -1,4 +1,4 @@
-﻿using TCSExchangeRateAPI.Services.WebAPI.Modules.Swagger;
+using TCSExchangeRateAPI.Services.WebAPI.Modules.Swagger;
 using TCSExchangeRateAPI.Services.WebAPI.Modules.AutoMapper;
 using TCSExchangeRateAPI.Services.WebAPI.Modules.DependencyInjection;
 

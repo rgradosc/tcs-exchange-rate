@@ -1,61 +1,68 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Threading.Tasks;
 using TCSExchangeRateAPI.Domain.Entity;
 using TCSExchangeRateAPI.Domain.Interfaces;
+using TCSExchangeRateAPI.Infrastructure.Interfaces;
 
 namespace TCSExchangeRateAPI.Domain.Core
 {
     public class SymbolDomain : ISymbolDomain
     {
+        private ISymbolRepository _symbolRepository;
+
+        public SymbolDomain(ISymbolRepository symbolRepository)
+        {
+            _symbolRepository = symbolRepository;
+        }
+
         public bool Insert(Symbol symbol)
         {
-            throw new NotImplementedException();
+            return _symbolRepository.Insert(symbol);
         }
 
         public bool Update(Symbol symbol)
         {
-            throw new NotImplementedException();
+            return _symbolRepository.Update(symbol);
         }
 
         public bool Delete(Symbol symbol)
         {
-            throw new NotImplementedException();
+            return _symbolRepository.Delete(symbol);
         }
 
         public Symbol Get(int symbolId)
         {
-            throw new NotImplementedException();
+            return _symbolRepository.Get(symbolId);
         }
 
         public IEnumerable<Symbol> GetAll()
         {
-            throw new NotImplementedException();
+            return _symbolRepository.GetAll();
         }
 
-        public Task<bool> InsertAsync(Symbol symbol)
+        public async Task<bool> InsertAsync(Symbol symbol)
         {
-            throw new NotImplementedException();
+            return await _symbolRepository.InsertAsync(symbol);
         }
 
-        public Task<bool> UpdateAsync(Symbol symbol)
+        public async Task<bool> UpdateAsync(Symbol symbol)
         {
-            throw new NotImplementedException();
+            return await _symbolRepository.UpdateAsync(symbol);
         }
 
-        public Task<bool> DeleteAsync(Symbol symbol)
+        public async Task<bool> DeleteAsync(Symbol symbol)
         {
-            throw new NotImplementedException();
+            return await _symbolRepository.DeleteAsync(symbol);
         }
 
-        public Task<Symbol> GetAsync(int symbolId)
+        public async Task<Symbol> GetAsync(int symbolId)
         {
-            throw new NotImplementedException();
+            return await _symbolRepository.GetAsync(symbolId);
         }
 
-        public Task<IEnumerable<Symbol>> GetAllAsync()
+        public async Task<IEnumerable<Symbol>> GetAllAsync()
         {
-            throw new NotImplementedException();
+            return await _symbolRepository.GetAllAsync();
         }
     }
 }

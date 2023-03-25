@@ -1,61 +1,68 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Threading.Tasks;
 using TCSExchangeRateAPI.Domain.Entity;
 using TCSExchangeRateAPI.Domain.Interfaces;
+using TCSExchangeRateAPI.Infrastructure.Interfaces;
 
 namespace TCSExchangeRateAPI.Domain.Core
 {
     public class ExchangeRateDomain : IExchangeRateDomain
     {
+        private readonly IExchangeRateRepository _exchangeRateRepository;
+
+        public ExchangeRateDomain(IExchangeRateRepository exchangeRateRepository)
+        {
+            _exchangeRateRepository = exchangeRateRepository;
+        }
+
         public bool Insert(ExchangeRate exchangeRate)
         {
-            throw new NotImplementedException();
+            return _exchangeRateRepository.Insert(exchangeRate);
         }
 
         public bool Update(ExchangeRate exchangeRate)
         {
-            throw new NotImplementedException();
+            return _exchangeRateRepository.Update(exchangeRate);
         }
 
         public bool Delete(ExchangeRate exchangeRate)
         {
-            throw new NotImplementedException();
+            return _exchangeRateRepository.Delete(exchangeRate);
         }
 
         public ExchangeRate Get(int rateId)
         {
-            throw new NotImplementedException();
+            return _exchangeRateRepository.Get(rateId);
         }
 
         public IEnumerable<ExchangeRate> GetAll()
         {
-            throw new NotImplementedException();
+            return _exchangeRateRepository.GetAll();
         }
 
-        public Task<bool> InsertAsync(ExchangeRate exchangeRate)
+        public async Task<bool> InsertAsync(ExchangeRate exchangeRate)
         {
-            throw new NotImplementedException();
+            return await _exchangeRateRepository.InsertAsync(exchangeRate);
         }
 
-        public Task<bool> UpdateAsync(ExchangeRate exchangeRate)
+        public async Task<bool> UpdateAsync(ExchangeRate exchangeRate)
         {
-            throw new NotImplementedException();
+            return await _exchangeRateRepository.UpdateAsync(exchangeRate);
         }
 
-        public Task<bool> DeleteAsync(ExchangeRate exchangeRate)
+        public async Task<bool> DeleteAsync(ExchangeRate exchangeRate)
         {
-            throw new NotImplementedException();
+            return await _exchangeRateRepository.DeleteAsync(exchangeRate);
         }
 
-        public Task<ExchangeRate> GetAsync(int rateId)
+        public async Task<ExchangeRate> GetAsync(int rateId)
         {
-            throw new NotImplementedException();
+            return await _exchangeRateRepository.GetAsync(rateId);
         }
 
-        public Task<IEnumerable<ExchangeRate>> GetAllAsync()
+        public async Task<IEnumerable<ExchangeRate>> GetAllAsync()
         {
-            throw new NotImplementedException();
+            return await _exchangeRateRepository.GetAllAsync();
         }
     }
 }

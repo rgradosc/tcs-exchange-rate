@@ -1,4 +1,5 @@
 ﻿using TCSExchangeRateAPI.Services.WebAPI.Modules.Swagger;
+using TCSExchangeRateAPI.Services.WebAPI.Modules.AutoMapper;
 
 namespace TCSExchangeRateAPI.Services.WebAPI
 {
@@ -13,6 +14,7 @@ namespace TCSExchangeRateAPI.Services.WebAPI
 
         public void ConfigureServices(IServiceCollection services)
         {
+            services.AddAutoMapper();
             services.AddControllers();
             services.AddEndpointsApiExplorer();
             services.AddSwagger();

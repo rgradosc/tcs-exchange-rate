@@ -1,4 +1,8 @@
-﻿namespace TCSExchangeRateAPI.Services.WebAPI
+using TCSExchangeRateAPI.Services.WebAPI.Modules.Swagger;
+using TCSExchangeRateAPI.Services.WebAPI.Modules.AutoMapper;
+using TCSExchangeRateAPI.Services.WebAPI.Modules.DependencyInjection;
+
+namespace TCSExchangeRateAPI.Services.WebAPI
 {
     public class Startup
     {
@@ -11,9 +15,11 @@
 
         public void ConfigureServices(IServiceCollection services)
         {
+            services.AddAutoMapper();
             services.AddControllers();
             services.AddEndpointsApiExplorer();
-            services.AddSwaggerGen();            
+            services.AddDependencyInjection(Configuration);
+            services.AddSwagger();
         }
 
         public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
@@ -24,7 +30,12 @@
             }
 
             app.UseSwagger();
-            app.UseSwaggerUI();
+
+            app.UseSwaggerUI(config =>
+            {
+                config.SwaggerEndpoint("/swagger/v1/swagger.json", "Exchange Rate API v1");
+            });
+
 
             app.UseHttpsRedirection();
 

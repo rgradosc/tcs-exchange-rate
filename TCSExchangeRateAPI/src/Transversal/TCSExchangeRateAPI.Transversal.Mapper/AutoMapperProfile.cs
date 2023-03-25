@@ -1,4 +1,6 @@
-﻿using AutoMapper;
+using AutoMapper;
+using TCSExchangeRateAPI.Application.DTO;
+using TCSExchangeRateAPI.Domain.Entity;
 
 namespace TCSExchangeRateAPI.Transversal.Mapper
 {
@@ -6,7 +8,10 @@ namespace TCSExchangeRateAPI.Transversal.Mapper
     {
         public AutoMapperProfile()
         {
-            
+            CreateMap<Symbol, SymbolDTO>()
+                .ForMember(x => x.Code, opt => opt.MapFrom(s => s.SymbolCode))
+                .ForMember(x => x.Name, opt => opt.MapFrom(s => s.SymbolName))
+                .ReverseMap();
         }
     }
 }

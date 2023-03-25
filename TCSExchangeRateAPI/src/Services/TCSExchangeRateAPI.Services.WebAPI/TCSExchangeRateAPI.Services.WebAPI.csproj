@@ -7,7 +7,21 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <PackageReference Include="AutoMapper" Version="12.0.1" />
+    <PackageReference Include="AutoMapper.Extensions.Microsoft.DependencyInjection" Version="12.0.0" />
+    <PackageReference Include="Microsoft.Data.Sqlite" Version="7.0.4" />
     <PackageReference Include="Swashbuckle.AspNetCore" Version="6.2.3" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\..\Application\TCSExchangeRateAPI.Application.Interfaces\TCSExchangeRateAPI.Application.Interfaces.csproj" />
+    <ProjectReference Include="..\..\Application\TCSExchangeRateAPI.Application.Main\TCSExchangeRateAPI.Application.Main.csproj" />
+    <ProjectReference Include="..\..\Domain\TCSExchangeRateAPI.Domain.Core\TCSExchangeRateAPI.Domain.Core.csproj" />
+    <ProjectReference Include="..\..\Infrastructure\TCSExchangeRateAPI.Infrastructure.Data\TCSExchangeRateAPI.Infrastructure.Data.csproj" />
+    <ProjectReference Include="..\..\Infrastructure\TCSExchangeRateAPI.Infrastructure.Interfaces\TCSExchangeRateAPI.Infrastructure.Interfaces.csproj" />
+    <ProjectReference Include="..\..\Infrastructure\TCSExchangeRateAPI.Infrastructure.Repository\TCSExchangeRateAPI.Infrastructure.Repository.csproj" />
+    <ProjectReference Include="..\..\Transversal\TCSExchangeRateAPI.Transversal.Logging\TCSExchangeRateAPI.Transversal.Logging.csproj" />
+    <ProjectReference Include="..\..\Transversal\TCSExchangeRateAPI.Transversal.Mapper\TCSExchangeRateAPI.Transversal.Mapper.csproj" />
   </ItemGroup>
 
 </Project>

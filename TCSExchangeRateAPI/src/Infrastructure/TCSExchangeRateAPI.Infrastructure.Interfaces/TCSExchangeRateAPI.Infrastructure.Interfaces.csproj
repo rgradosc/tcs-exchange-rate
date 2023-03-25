@@ -5,4 +5,8 @@
     <Nullable>disable</Nullable>
   </PropertyGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\..\Domain\TCSExchangeRateAPI.Domain.Entity\TCSExchangeRateAPI.Domain.Entity.csproj" />
+  </ItemGroup>
+  
 </Project>

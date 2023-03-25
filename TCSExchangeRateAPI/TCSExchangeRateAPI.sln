@@ -39,6 +39,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TCSExchangeRateAPI.Applicat
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TCSExchangeRateAPI.Application.DTO", "src\Application\TCSExchangeRateAPI.Application.DTO\TCSExchangeRateAPI.Application.DTO.csproj", "{5C502AF3-98D7-4C07-A536-05F48C8FEE3F}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TCSExchangeRateAPI.Transversal.Mapper", "src\Transversal\TCSExchangeRateAPI.Transversal.Mapper\TCSExchangeRateAPI.Transversal.Mapper.csproj", "{7BCD8B70-9192-4A26-8618-3338246E16EB}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -93,6 +95,10 @@ Global
 		{5C502AF3-98D7-4C07-A536-05F48C8FEE3F}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{5C502AF3-98D7-4C07-A536-05F48C8FEE3F}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{5C502AF3-98D7-4C07-A536-05F48C8FEE3F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7BCD8B70-9192-4A26-8618-3338246E16EB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7BCD8B70-9192-4A26-8618-3338246E16EB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7BCD8B70-9192-4A26-8618-3338246E16EB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7BCD8B70-9192-4A26-8618-3338246E16EB}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -115,6 +121,7 @@ Global
 		{83A2717E-DFA6-4C82-AF76-5038712988FC} = {43F6D28B-15BD-4437-A9D8-5403FB6FA3EF}
 		{44E53A70-38D5-4DA0-880B-809FB706AED3} = {43F6D28B-15BD-4437-A9D8-5403FB6FA3EF}
 		{5C502AF3-98D7-4C07-A536-05F48C8FEE3F} = {43F6D28B-15BD-4437-A9D8-5403FB6FA3EF}
+		{7BCD8B70-9192-4A26-8618-3338246E16EB} = {275F66FB-BB3D-4F68-9FBB-673D8FBAE12A}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {960650A5-8386-4107-A901-FE7FB536F491}

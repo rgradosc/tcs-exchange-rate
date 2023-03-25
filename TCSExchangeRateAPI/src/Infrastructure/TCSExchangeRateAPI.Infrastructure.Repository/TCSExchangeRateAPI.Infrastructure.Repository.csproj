@@ -6,6 +6,10 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <PackageReference Include="Dapper" Version="2.0.123" />
+  </ItemGroup>
+
+  <ItemGroup>
     <ProjectReference Include="..\..\Transversal\TCSExchangeRateAPI.Transversal.Common\TCSExchangeRateAPI.Transversal.Common.csproj" />
     <ProjectReference Include="..\TCSExchangeRateAPI.Infrastructure.Data\TCSExchangeRateAPI.Infrastructure.Data.csproj" />
     <ProjectReference Include="..\TCSExchangeRateAPI.Infrastructure.Interfaces\TCSExchangeRateAPI.Infrastructure.Interfaces.csproj" />

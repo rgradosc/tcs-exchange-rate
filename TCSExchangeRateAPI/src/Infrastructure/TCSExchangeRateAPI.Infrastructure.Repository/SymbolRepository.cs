@@ -24,7 +24,8 @@ namespace TCSExchangeRateAPI.Infrastructure.Repository
                 var p = new DynamicParameters();
                 p.Add("@SymbolId", symbol.Id);
 
-                var result = connection.Execute("SymbolsDelete", param: p, commandType: CommandType.StoredProcedure);
+                var result = connection.Execute("DELETE FROM Symbols WHERE Id=@SymbolId;", 
+                                param: p, commandType: CommandType.Text);
 
                 return result > 0;
             }
@@ -37,7 +38,8 @@ namespace TCSExchangeRateAPI.Infrastructure.Repository
                 var p = new DynamicParameters();
                 p.Add("@SymbolId", symbol.Id);
 
-                var result = await connection.ExecuteAsync("SymbolsDelete", param: p, commandType: CommandType.StoredProcedure);
+                var result = await connection.ExecuteAsync("DELETE FROM Symbols WHERE Id=@SymbolId;", 
+                                    param: p, commandType: CommandType.Text);
 
                 return result > 0;
             }
@@ -50,7 +52,8 @@ namespace TCSExchangeRateAPI.Infrastructure.Repository
                 var p = new DynamicParameters();
                 p.Add("@SymbolId", symbolId);
 
-                var symbol = connection.QuerySingle<Symbol>("SymbolGetByID", param: p, commandType: CommandType.StoredProcedure);
+                var symbol = connection.QuerySingle<Symbol>("SELECT Id, SymbolCode, SymbolName, Active FROM Symbols WHERE Id=@SymbolId;", 
+                                param: p, commandType: CommandType.Text);
 
                 return symbol;
             }
@@ -63,7 +66,8 @@ namespace TCSExchangeRateAPI.Infrastructure.Repository
                 var p = new DynamicParameters();
                 p.Add("@SymbolId", symbolId);
 
-                var symbol = await connection.QuerySingleAsync<Symbol>("SymbolGetByID", param: p, commandType: CommandType.StoredProcedure);
+                var symbol = await connection.QuerySingleAsync<Symbol>("SELECT Id, SymbolCode, SymbolName, Active FROM Symbols WHERE Id=@SymbolId;", 
+                                param: p, commandType: CommandType.Text);
 
                 return symbol;
             }
@@ -73,7 +77,8 @@ namespace TCSExchangeRateAPI.Infrastructure.Repository
         {
             using (var connection = _connectionFactory.Connection)
             {
-                var symbols = connection.Query<Symbol>("SymbolsList", commandType: CommandType.StoredProcedure);
+                var symbols = connection.Query<Symbol>("SELECT Id, SymbolCode, SymbolName, Active FROM Symbols;", 
+                                commandType: CommandType.Text);
 
                 return symbols;
             }
@@ -83,7 +88,8 @@ namespace TCSExchangeRateAPI.Infrastructure.Repository
         {
             using (var connection = _connectionFactory.Connection)
             {
-                var symbols = await connection.QueryAsync<Symbol>("SymbolsList", commandType: CommandType.StoredProcedure);
+                var symbols = await connection.QueryAsync<Symbol>("SELECT Id, SymbolCode, SymbolName, Active FROM Symbols;", 
+                                commandType: CommandType.Text);
 
                 return symbols;
             }
@@ -97,7 +103,8 @@ namespace TCSExchangeRateAPI.Infrastructure.Repository
                 p.Add("@SymbolCode", symbol.SymbolCode);
                 p.Add("@SymbolName", symbol.SymbolName);
                 
-                var result = connection.Execute("SymbolsInsert", param: p, commandType: CommandType.StoredProcedure);
+                var result = connection.Execute("INSERT INTO Symbols(SymbolCode, SymbolName, Active) VALUES('@SymbolCode','@SymbolName','Y');", 
+                                param: p, commandType: CommandType.Text);
 
                 return result > 0;
             }
@@ -111,7 +118,8 @@ namespace TCSExchangeRateAPI.Infrastructure.Repository
                 p.Add("@SymbolCode", symbol.SymbolCode);
                 p.Add("@SymbolName", symbol.SymbolName);
 
-                var result = await connection.ExecuteAsync("SymbolsInsert", param: p, commandType: CommandType.StoredProcedure);
+                var result = await connection.ExecuteAsync("INSERT INTO Symbols(SymbolCode, SymbolName, Active) VALUES(@SymbolCode, @SymbolName,'Y');",
+                                    param: p, commandType: CommandType.Text);
 
                 return result > 0;
             }
@@ -127,7 +135,8 @@ namespace TCSExchangeRateAPI.Infrastructure.Repository
                 p.Add("@SymbolName", symbol.SymbolName);
                 p.Add("@Active", symbol.Active);
 
-                var result = connection.Execute("SymbolsUpdate", param: p, commandType: CommandType.StoredProcedure);
+                var result = connection.Execute("UPDATE Symbols SET SymbolCode=@SymbolCode, SymbolName=@SymbolName, Active=@Active WHERE Id=@Id;", 
+                                param: p, commandType: CommandType.Text);
 
                 return result > 0;
             }
@@ -143,7 +152,8 @@ namespace TCSExchangeRateAPI.Infrastructure.Repository
                 p.Add("@SymbolName", symbol.SymbolName);
                 p.Add("@Active", symbol.Active);
 
-                var result = await connection.ExecuteAsync("SymbolsUpdate", param: p, commandType: CommandType.StoredProcedure);
+                var result = await connection.ExecuteAsync("UPDATE Symbols SET SymbolCode=@SymbolCode, SymbolName=@SymbolName, Active=@Active WHERE Id=@Id;", 
+                                param: p, commandType: CommandType.Text);
 
                 return result > 0;
             }

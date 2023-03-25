@@ -8,7 +8,7 @@
 
         public string SymbolName { get; set; }
 
-        public bool Active { get; set; }
+        public string Active { get; set; }
 
         public Symbol()
         {
@@ -19,7 +19,7 @@
         {
             SymbolCode = symbolCode;
             SymbolName = symbolName;
-            Active = true;
+            Active = "N";
         }
     }
 }

@@ -1,0 +1,14 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netstandard2.1</TargetFramework>
+    <Nullable>disable</Nullable>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\..\Infrastructure\TCSExchangeRateAPI.Infrastructure.Interfaces\TCSExchangeRateAPI.Infrastructure.Interfaces.csproj" />
+    <ProjectReference Include="..\TCSExchangeRateAPI.Domain.Entity\TCSExchangeRateAPI.Domain.Entity.csproj" />
+    <ProjectReference Include="..\TCSExchangeRateAPI.Domain.Interfaces\TCSExchangeRateAPI.Domain.Interfaces.csproj" />
+  </ItemGroup>
+
+</Project>

@@ -1,5 +1,6 @@
 ﻿using TCSExchangeRateAPI.Services.WebAPI.Modules.Swagger;
 using TCSExchangeRateAPI.Services.WebAPI.Modules.AutoMapper;
+using TCSExchangeRateAPI.Services.WebAPI.Modules.DependencyInjection;
 
 namespace TCSExchangeRateAPI.Services.WebAPI
 {
@@ -17,6 +18,7 @@ namespace TCSExchangeRateAPI.Services.WebAPI
             services.AddAutoMapper();
             services.AddControllers();
             services.AddEndpointsApiExplorer();
+            services.AddDependencyInjection(Configuration);
             services.AddSwagger();
         }
 

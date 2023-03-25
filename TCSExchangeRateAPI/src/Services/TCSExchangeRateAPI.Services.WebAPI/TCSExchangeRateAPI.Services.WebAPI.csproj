@@ -13,6 +13,8 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\..\Infrastructure\TCSExchangeRateAPI.Infrastructure.Data\TCSExchangeRateAPI.Infrastructure.Data.csproj" />
+    <ProjectReference Include="..\..\Transversal\TCSExchangeRateAPI.Transversal.Logging\TCSExchangeRateAPI.Transversal.Logging.csproj" />
     <ProjectReference Include="..\..\Transversal\TCSExchangeRateAPI.Transversal.Mapper\TCSExchangeRateAPI.Transversal.Mapper.csproj" />
   </ItemGroup>
 

@@ -10,7 +10,7 @@ using TCSExchangeRateAPI.Transversal.Common;
 
 namespace TCSExchangeRateAPI.Application.Main
 {
-    internal class SymbolApplication : ISymbolApplication
+    public class SymbolApplication : ISymbolApplication
     {
         private readonly ISymbolDomain _symbolDomain;
         private readonly IMapper _mapper;

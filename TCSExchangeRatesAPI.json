@@ -1,0 +1,448 @@
+{
+	"info": {
+		"_postman_id": "d9aca5cf-1985-4392-b28c-65d988b9e137",
+		"name": "TCSExchangeRatesAPI",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "1049362"
+	},
+	"item": [
+		{
+			"name": "Authenticate",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"username\": \"admin\",\r\n  \"password\": \"admin\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/Users/Authenticate",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"Users",
+						"Authenticate"
+					]
+				},
+				"description": "Allows to obtain the user identifier token by entering user name and password."
+			},
+			"response": [
+				{
+					"name": "Success",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"username\": \"admin\",\r\n  \"password\": \"admin\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/Users/Authenticate",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"Users",
+								"Authenticate"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Length",
+							"value": "306"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Date",
+							"value": "Sun, 26 Mar 2023 19:34:14 GMT"
+						},
+						{
+							"key": "Server",
+							"value": "Kestrel"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"token\": \"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJuYW1lIjoiYWRtaW4iLCJuYmYiOjE2Nzk4NTkyNTUsImV4cCI6MTY3OTg1OTU1NSwiaWF0IjoxNjc5ODU5MjU1LCJpc3MiOiJ3d3cudGNzdGVjaG5vbG9neS5jb20iLCJhdWQiOiJ3d3cudGNzdGVjaG5vbG9neS5jb20ifQ.SUYexYXiS3sRb4SXhqBPMQPnz0_MNJP2mY1YCqY5DYg\",\n    \"expiredAt\": \"2023-03-26T19:39:15.2304533Z\"\n}"
+				}
+			]
+		},
+		{
+			"name": "ListSymbols",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJuYW1lIjoiYWRtaW4iLCJuYmYiOjE2Nzk4NTkyNTUsImV4cCI6MTY3OTg1OTU1NSwiaWF0IjoxNjc5ODU5MjU1LCJpc3MiOiJ3d3cudGNzdGVjaG5vbG9neS5jb20iLCJhdWQiOiJ3d3cudGNzdGVjaG5vbG9neS5jb20ifQ.SUYexYXiS3sRb4SXhqBPMQPnz0_MNJP2mY1YCqY5DYg",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/api/v1/Symbols",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"v1",
+						"Symbols"
+					]
+				},
+				"description": "Allows you to obtain the coin symbols available in a collection."
+			},
+			"response": [
+				{
+					"name": "Success",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/api/v1/Symbols",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"v1",
+								"Symbols"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Length",
+							"value": "3717"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Date",
+							"value": "Sun, 26 Mar 2023 19:34:30 GMT"
+						},
+						{
+							"key": "Server",
+							"value": "Kestrel"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"data\": [\n        {\n            \"id\": 1,\n            \"code\": \"AED\",\n            \"name\": \"United Arab Emirates Dirham\",\n            \"active\": \"Y\"\n        },\n        {\n            \"id\": 2,\n            \"code\": \"AFN\",\n            \"name\": \"Afghan Afghani\",\n            \"active\": \"Y\"\n        },\n        {\n            \"id\": 3,\n            \"code\": \"ALL\",\n            \"name\": \"Albanian Lek\",\n            \"active\": \"Y\"\n        },\n        {\n            \"id\": 4,\n            \"code\": \"AMD\",\n            \"name\": \"Armenian Dram\",\n            \"active\": \"Y\"\n        },\n        {\n            \"id\": 5,\n            \"code\": \"ANG\",\n            \"name\": \"Netherlands Antillean guilder\",\n            \"active\": \"Y\"\n        },\n        {\n            \"id\": 6,\n            \"code\": \"AOA\",\n            \"name\": \"Angolan Kwanza\",\n            \"active\": \"Y\"\n        },\n        {\n            \"id\": 7,\n            \"code\": \"ARS\",\n            \"name\": \"Argentine Peso\",\n            \"active\": \"Y\"\n        },\n        {\n            \"id\": 8,\n            \"code\": \"AUD\",\n            \"name\": \"Australian Dollar\",\n            \"active\": \"Y\"\n        },\n        {\n            \"id\": 9,\n            \"code\": \"AWG\",\n            \"name\": \"Aruban Florin\",\n            \"active\": \"Y\"\n        },\n        {\n            \"id\": 10,\n            \"code\": \"AZN\",\n            \"name\": \"Azerbaijani Manat\",\n            \"active\": \"Y\"\n        },\n        {\n            \"id\": 11,\n            \"code\": \"BAM\",\n            \"name\": \"Bosnia and Herzegovina Convertible Mark\",\n            \"active\": \"Y\"\n        },\n        {\n            \"id\": 12,\n            \"code\": \"BBD\",\n            \"name\": \"Barbados Dollar\",\n            \"active\": \"Y\"\n        },\n        {\n            \"id\": 13,\n            \"code\": \"BDT\",\n            \"name\": \"\",\n            \"active\": \"N\"\n        },\n        {\n            \"id\": 14,\n            \"code\": \"BGN\",\n            \"name\": \"\",\n            \"active\": \"N\"\n        },\n        {\n            \"id\": 15,\n            \"code\": \"BHD\",\n            \"name\": \"\",\n            \"active\": \"N\"\n        },\n        {\n            \"id\": 16,\n            \"code\": \"BIF\",\n            \"name\": \"\",\n            \"active\": \"N\"\n        },\n        {\n            \"id\": 17,\n            \"code\": \"BMD\",\n            \"name\": \"\",\n            \"active\": \"N\"\n        },\n        {\n            \"id\": 18,\n            \"code\": \"BND\",\n            \"name\": \"\",\n            \"active\": \"N\"\n        },\n        {\n            \"id\": 19,\n            \"code\": \"BOB\",\n            \"name\": \"\",\n            \"active\": \"N\"\n        },\n        {\n            \"id\": 20,\n            \"code\": \"BRL\",\n            \"name\": \"\",\n            \"active\": \"N\"\n        },\n        {\n            \"id\": 21,\n            \"code\": \"BSD\",\n            \"name\": \"\",\n            \"active\": \"N\"\n        },\n        {\n            \"id\": 22,\n            \"code\": \"BTN\",\n            \"name\": \"\",\n            \"active\": \"N\"\n        },\n        {\n            \"id\": 23,\n            \"code\": \"BWP\",\n            \"name\": \"\",\n            \"active\": \"N\"\n        },\n        {\n            \"id\": 24,\n            \"code\": \"BYN\",\n            \"name\": \"\",\n            \"active\": \"N\"\n        },\n        {\n            \"id\": 25,\n            \"code\": \"BZD\",\n            \"name\": \"\",\n            \"active\": \"N\"\n        },\n        {\n            \"id\": 26,\n            \"code\": \"CAD\",\n            \"name\": \"\",\n            \"active\": \"N\"\n        },\n        {\n            \"id\": 27,\n            \"code\": \"CDF\",\n            \"name\": \"\",\n            \"active\": \"N\"\n        },\n        {\n            \"id\": 28,\n            \"code\": \"CHF\",\n            \"name\": \"\",\n            \"active\": \"N\"\n        },\n        {\n            \"id\": 29,\n            \"code\": \"CLP\",\n            \"name\": \"\",\n            \"active\": \"N\"\n        },\n        {\n            \"id\": 30,\n            \"code\": \"CNY\",\n            \"name\": \"\",\n            \"active\": \"N\"\n        },\n        {\n            \"id\": 31,\n            \"code\": \"COP\",\n            \"name\": \"\",\n            \"active\": \"N\"\n        },\n        {\n            \"id\": 32,\n            \"code\": \"CRC\",\n            \"name\": \"\",\n            \"active\": \"N\"\n        },\n        {\n            \"id\": 33,\n            \"code\": \"CUP\",\n            \"name\": \"\",\n            \"active\": \"N\"\n        },\n        {\n            \"id\": 34,\n            \"code\": \"CVE\",\n            \"name\": \"\",\n            \"active\": \"N\"\n        },\n        {\n            \"id\": 35,\n            \"code\": \"CZK\",\n            \"name\": \"\",\n            \"active\": \"N\"\n        },\n        {\n            \"id\": 36,\n            \"code\": \"DJF\",\n            \"name\": \"\",\n            \"active\": \"N\"\n        },\n        {\n            \"id\": 37,\n            \"code\": \"DKK\",\n            \"name\": \"\",\n            \"active\": \"N\"\n        },\n        {\n            \"id\": 38,\n            \"code\": \"DOP\",\n            \"name\": \"\",\n            \"active\": \"N\"\n        },\n        {\n            \"id\": 39,\n            \"code\": \"DZD\",\n            \"name\": \"\",\n            \"active\": \"N\"\n        },\n        {\n            \"id\": 40,\n            \"code\": \"EGP\",\n            \"name\": \"\",\n            \"active\": \"N\"\n        },\n        {\n            \"id\": 41,\n            \"code\": \"ERN\",\n            \"name\": \"\",\n            \"active\": \"N\"\n        },\n        {\n            \"id\": 42,\n            \"code\": \"ETB\",\n            \"name\": \"\",\n            \"active\": \"N\"\n        },\n        {\n            \"id\": 43,\n            \"code\": \"EUR\",\n            \"name\": \"Euro\",\n            \"active\": \"Y\"\n        },\n        {\n            \"id\": 44,\n            \"code\": \"FJD\",\n            \"name\": \"\",\n            \"active\": \"N\"\n        },\n        {\n            \"id\": 45,\n            \"code\": \"FKP\",\n            \"name\": \"\",\n            \"active\": \"N\"\n        },\n        {\n            \"id\": 46,\n            \"code\": \"FOK\",\n            \"name\": \"\",\n            \"active\": \"N\"\n        },\n        {\n            \"id\": 47,\n            \"code\": \"GBP\",\n            \"name\": \"\",\n            \"active\": \"N\"\n        },\n        {\n            \"id\": 48,\n            \"code\": \"GEL\",\n            \"name\": \"\",\n            \"active\": \"N\"\n        },\n        {\n            \"id\": 49,\n            \"code\": \"GGP\",\n            \"name\": \"\",\n            \"active\": \"N\"\n        },\n        {\n            \"id\": 50,\n            \"code\": \"GHS\",\n            \"name\": \"\",\n            \"active\": \"N\"\n        },\n        {\n            \"id\": 51,\n            \"code\": \"GIP\",\n            \"name\": \"\",\n            \"active\": \"N\"\n        },\n        {\n            \"id\": 52,\n            \"code\": \"GMD\",\n            \"name\": \"\",\n            \"active\": \"N\"\n        },\n        {\n            \"id\": 53,\n            \"code\": \"GNF\",\n            \"name\": \"\",\n            \"active\": \"N\"\n        },\n        {\n            \"id\": 54,\n            \"code\": \"GTQ\",\n            \"name\": \"\",\n            \"active\": \"N\"\n        },\n        {\n            \"id\": 55,\n            \"code\": \"GYD\",\n            \"name\": \"\",\n            \"active\": \"N\"\n        },\n        {\n            \"id\": 56,\n            \"code\": \"HKD\",\n            \"name\": \"\",\n            \"active\": \"N\"\n        },\n        {\n            \"id\": 57,\n            \"code\": \"HNL\",\n            \"name\": \"\",\n            \"active\": \"N\"\n        },\n        {\n            \"id\": 58,\n            \"code\": \"IDR\",\n            \"name\": \"\",\n            \"active\": \"N\"\n        },\n        {\n            \"id\": 59,\n            \"code\": \"ILS\",\n            \"name\": \"\",\n            \"active\": \"N\"\n        },\n        {\n            \"id\": 60,\n            \"code\": \"JEP\",\n            \"name\": \"\",\n            \"active\": \"N\"\n        },\n        {\n            \"id\": 61,\n            \"code\": \"JMD\",\n            \"name\": \"\",\n            \"active\": \"N\"\n        },\n        {\n            \"id\": 62,\n            \"code\": \"KES\",\n            \"name\": \"\",\n            \"active\": \"N\"\n        },\n        {\n            \"id\": 63,\n            \"code\": \"LAK\",\n            \"name\": \"\",\n            \"active\": \"N\"\n        },\n        {\n            \"id\": 64,\n            \"code\": \"MAD\",\n            \"name\": \"\",\n            \"active\": \"N\"\n        },\n        {\n            \"id\": 65,\n            \"code\": \"NAD\",\n            \"name\": \"\",\n            \"active\": \"N\"\n        },\n        {\n            \"id\": 66,\n            \"code\": \"OMR\",\n            \"name\": \"\",\n            \"active\": \"N\"\n        },\n        {\n            \"id\": 67,\n            \"code\": \"PAB\",\n            \"name\": \"\",\n            \"active\": \"N\"\n        },\n        {\n            \"id\": 68,\n            \"code\": \"PEN\",\n            \"name\": \"Peruvian Nuevo Sol\",\n            \"active\": \"Y\"\n        },\n        {\n            \"id\": 69,\n            \"code\": \"SAR\",\n            \"name\": \"\",\n            \"active\": \"N\"\n        },\n        {\n            \"id\": 70,\n            \"code\": \"TND\",\n            \"name\": \"\",\n            \"active\": \"N\"\n        },\n        {\n            \"id\": 71,\n            \"code\": \"TOP\",\n            \"name\": \"\",\n            \"active\": \"N\"\n        },\n        {\n            \"id\": 72,\n            \"code\": \"UAH\",\n            \"name\": \"\",\n            \"active\": \"N\"\n        },\n        {\n            \"id\": 73,\n            \"code\": \"UGX\",\n            \"name\": \"\",\n            \"active\": \"N\"\n        },\n        {\n            \"id\": 74,\n            \"code\": \"USD\",\n            \"name\": \"United States Dollar\",\n            \"active\": \"Y\"\n        }\n    ],\n    \"isSuccess\": true,\n    \"message\": \"Consulta exitosa\"\n}"
+				}
+			]
+		},
+		{
+			"name": "ListLatestRates",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJuYW1lIjoiYWRtaW4iLCJuYmYiOjE2Nzk4NjExNzYsImV4cCI6MTY3OTg2MTQ3NiwiaWF0IjoxNjc5ODYxMTc2LCJpc3MiOiJ3d3cudGNzdGVjaG5vbG9neS5jb20iLCJhdWQiOiJ3d3cudGNzdGVjaG5vbG9neS5jb20ifQ.miIAwZMJ56Twlsm5mzZXeOO6g4kTZOeHzFm-td1pAZg",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/api/v1/ExchangeRates/latest",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"v1",
+						"ExchangeRates",
+						"latest"
+					]
+				},
+				"description": "Allows you to obtain all available types of changes."
+			},
+			"response": [
+				{
+					"name": "Success",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/api/v1/ExchangeRates/latest",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"v1",
+								"ExchangeRates",
+								"latest"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Length",
+							"value": "2726"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Date",
+							"value": "Sun, 26 Mar 2023 19:34:55 GMT"
+						},
+						{
+							"key": "Server",
+							"value": "Kestrel"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"data\": [\n        {\n            \"id\": 1,\n            \"base\": \"AED\",\n            \"target\": \"AED\",\n            \"rate\": 1,\n            \"dateLastRate\": \"25-03-2023\"\n        },\n        {\n            \"id\": 2,\n            \"base\": \"AED\",\n            \"target\": \"AFN\",\n            \"rate\": 23.62,\n            \"dateLastRate\": \"25-03-2023\"\n        },\n        {\n            \"id\": 3,\n            \"base\": \"AED\",\n            \"target\": \"ALL\",\n            \"rate\": 28.79,\n            \"dateLastRate\": \"25-03-2023\"\n        },\n        {\n            \"id\": 4,\n            \"base\": \"AED\",\n            \"target\": \"AMD\",\n            \"rate\": 105.95,\n            \"dateLastRate\": \"25-03-2023\"\n        },\n        {\n            \"id\": 14,\n            \"base\": \"AFN\",\n            \"target\": \"AFN\",\n            \"rate\": 1,\n            \"dateLastRate\": \"25-03-2023\"\n        },\n        {\n            \"id\": 15,\n            \"base\": \"AFN\",\n            \"target\": \"AED\",\n            \"rate\": 0.0423,\n            \"dateLastRate\": \"25-03-2023\"\n        },\n        {\n            \"id\": 16,\n            \"base\": \"AFN\",\n            \"target\": \"ALL\",\n            \"rate\": 1.22,\n            \"dateLastRate\": \"25-03-2023\"\n        },\n        {\n            \"id\": 24,\n            \"base\": \"AFN\",\n            \"target\": \"EUR\",\n            \"rate\": 0.0106,\n            \"dateLastRate\": \"25-03-2023\"\n        },\n        {\n            \"id\": 25,\n            \"base\": \"AFN\",\n            \"target\": \"PEN\",\n            \"rate\": 0.0435,\n            \"dateLastRate\": \"25-03-2023\"\n        },\n        {\n            \"id\": 26,\n            \"base\": \"AFN\",\n            \"target\": \"USD\",\n            \"rate\": 0.0115,\n            \"dateLastRate\": \"25-03-2023\"\n        },\n        {\n            \"id\": 27,\n            \"base\": \"ALL\",\n            \"target\": \"ALL\",\n            \"rate\": 1,\n            \"dateLastRate\": \"25-03-2023\"\n        },\n        {\n            \"id\": 40,\n            \"base\": \"AMD\",\n            \"target\": \"AMD\",\n            \"rate\": 1,\n            \"dateLastRate\": \"25-03-2023\"\n        },\n        {\n            \"id\": 53,\n            \"base\": \"ANG\",\n            \"target\": \"ANG\",\n            \"rate\": 1,\n            \"dateLastRate\": \"25-03-2023\"\n        },\n        {\n            \"id\": 66,\n            \"base\": \"AOA\",\n            \"target\": \"AOA\",\n            \"rate\": 1,\n            \"dateLastRate\": \"25-03-2023\"\n        },\n        {\n            \"id\": 79,\n            \"base\": \"ARS\",\n            \"target\": \"ARS\",\n            \"rate\": 1,\n            \"dateLastRate\": \"25-03-2023\"\n        },\n        {\n            \"id\": 80,\n            \"base\": \"ARS\",\n            \"target\": \"AED\",\n            \"rate\": 0.0179,\n            \"dateLastRate\": \"25-03-2023\"\n        },\n        {\n            \"id\": 81,\n            \"base\": \"ARS\",\n            \"target\": \"AFN\",\n            \"rate\": 0.423,\n            \"dateLastRate\": \"25-03-2023\"\n        },\n        {\n            \"id\": 82,\n            \"base\": \"ARS\",\n            \"target\": \"ALL\",\n            \"rate\": 0.515,\n            \"dateLastRate\": \"25-03-2023\"\n        },\n        {\n            \"id\": 83,\n            \"base\": \"ARS\",\n            \"target\": \"AMD\",\n            \"rate\": 1.89,\n            \"dateLastRate\": \"25-03-2023\"\n        },\n        {\n            \"id\": 89,\n            \"base\": \"ARS\",\n            \"target\": \"EUR\",\n            \"rate\": 0.00446,\n            \"dateLastRate\": \"25-03-2023\"\n        },\n        {\n            \"id\": 90,\n            \"base\": \"ARS\",\n            \"target\": \"PEN\",\n            \"rate\": 0.0184,\n            \"dateLastRate\": \"25-03-2023\"\n        },\n        {\n            \"id\": 91,\n            \"base\": \"ARS\",\n            \"target\": \"USD\",\n            \"rate\": 0.00487,\n            \"dateLastRate\": \"25-03-2023\"\n        },\n        {\n            \"id\": 92,\n            \"base\": \"AUD\",\n            \"target\": \"AUD\",\n            \"rate\": 1,\n            \"dateLastRate\": \"25-03-2023\"\n        },\n        {\n            \"id\": 105,\n            \"base\": \"AWG\",\n            \"target\": \"AWG\",\n            \"rate\": 1,\n            \"dateLastRate\": \"25-03-2023\"\n        },\n        {\n            \"id\": 118,\n            \"base\": \"AZN\",\n            \"target\": \"AZN\",\n            \"rate\": 1,\n            \"dateLastRate\": \"25-03-2023\"\n        },\n        {\n            \"id\": 131,\n            \"base\": \"EUR\",\n            \"target\": \"EUR\",\n            \"rate\": 1,\n            \"dateLastRate\": \"25-03-2023\"\n        },\n        {\n            \"id\": 142,\n            \"base\": \"EUR\",\n            \"target\": \"PEN\",\n            \"rate\": 4.07,\n            \"dateLastRate\": \"25-03-2023\"\n        },\n        {\n            \"id\": 143,\n            \"base\": \"EUR\",\n            \"target\": \"USD\",\n            \"rate\": 1.08,\n            \"dateLastRate\": \"25-03-2023\"\n        },\n        {\n            \"id\": 144,\n            \"base\": \"PEN\",\n            \"target\": \"PEN\",\n            \"rate\": 1,\n            \"dateLastRate\": \"25-03-2023\"\n        },\n        {\n            \"id\": 155,\n            \"base\": \"PEN\",\n            \"target\": \"EUR\",\n            \"rate\": 0.25,\n            \"dateLastRate\": \"25-03-2023\"\n        },\n        {\n            \"id\": 156,\n            \"base\": \"PEN\",\n            \"target\": \"USD\",\n            \"rate\": 0.27,\n            \"dateLastRate\": \"25/03/2023\"\n        },\n        {\n            \"id\": 157,\n            \"base\": \"USD\",\n            \"target\": \"USD\",\n            \"rate\": 1,\n            \"dateLastRate\": \"25-03-2023\"\n        },\n        {\n            \"id\": 168,\n            \"base\": \"USD\",\n            \"target\": \"EUR\",\n            \"rate\": 0.93,\n            \"dateLastRate\": \"25-03-2023\"\n        },\n        {\n            \"id\": 169,\n            \"base\": \"USD\",\n            \"target\": \"PEN\",\n            \"rate\": 3.77,\n            \"dateLastRate\": \"25-03-2023\"\n        }\n    ],\n    \"isSuccess\": true,\n    \"message\": \"Consulta exitosa\"\n}"
+				}
+			]
+		},
+		{
+			"name": "ConvertRates",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJuYW1lIjoiYWRtaW4iLCJuYmYiOjE2Nzk4NjExNzYsImV4cCI6MTY3OTg2MTQ3NiwiaWF0IjoxNjc5ODYxMTc2LCJpc3MiOiJ3d3cudGNzdGVjaG5vbG9neS5jb20iLCJhdWQiOiJ3d3cudGNzdGVjaG5vbG9neS5jb20ifQ.miIAwZMJ56Twlsm5mzZXeOO6g4kTZOeHzFm-td1pAZg",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/api/v1/ExchangeRates/convert?Base=USD&Target=PEN&Amount=100",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"v1",
+						"ExchangeRates",
+						"convert"
+					],
+					"query": [
+						{
+							"key": "Base",
+							"value": "USD"
+						},
+						{
+							"key": "Target",
+							"value": "PEN"
+						},
+						{
+							"key": "Amount",
+							"value": "100"
+						}
+					]
+				},
+				"description": "Allows you to convert the value of an amount entered at the indicated exchange rate."
+			},
+			"response": [
+				{
+					"name": "Success",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://localhost:7124/api/v1/ExchangeRates/convert?Base=USD&Target=PEN&Amount=100",
+							"protocol": "https",
+							"host": [
+								"localhost"
+							],
+							"port": "7124",
+							"path": [
+								"api",
+								"v1",
+								"ExchangeRates",
+								"convert"
+							],
+							"query": [
+								{
+									"key": "Base",
+									"value": "USD"
+								},
+								{
+									"key": "Target",
+									"value": "PEN"
+								},
+								{
+									"key": "Amount",
+									"value": "100"
+								}
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Length",
+							"value": "179"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Date",
+							"value": "Sun, 26 Mar 2023 20:03:56 GMT"
+						},
+						{
+							"key": "Server",
+							"value": "Kestrel"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"data\": {\n        \"base\": \"USD\",\n        \"target\": \"PEN\",\n        \"exchangeRate\": 3.77,\n        \"amount\": 100,\n        \"amountConverted\": 377\n    },\n    \"isSuccess\": true,\n    \"message\": \"Conversión de USD al tipo de cambio en PEN exitosa\"\n}"
+				}
+			]
+		},
+		{
+			"name": "UpdateRates",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJuYW1lIjoiYWRtaW4iLCJuYmYiOjE2Nzk4NjExNzYsImV4cCI6MTY3OTg2MTQ3NiwiaWF0IjoxNjc5ODYxMTc2LCJpc3MiOiJ3d3cudGNzdGVjaG5vbG9neS5jb20iLCJhdWQiOiJ3d3cudGNzdGVjaG5vbG9neS5jb20ifQ.miIAwZMJ56Twlsm5mzZXeOO6g4kTZOeHzFm-td1pAZg",
+							"type": "string"
+						}
+					]
+				},
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"base\": \"AED\",\r\n  \"target\": \"AFN\",\r\n  \"rate\": 24.00\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/v1/ExchangeRates",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"v1",
+						"ExchangeRates"
+					]
+				},
+				"description": "Allows to update the exchange rates of the available currencies."
+			},
+			"response": [
+				{
+					"name": "Success",
+					"originalRequest": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"base\": \"AED\",\r\n  \"target\": \"AFN\",\r\n  \"rate\": 24.00\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/v1/ExchangeRates",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"v1",
+								"ExchangeRates"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Length",
+							"value": "66"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Date",
+							"value": "Sun, 26 Mar 2023 20:08:39 GMT"
+						},
+						{
+							"key": "Server",
+							"value": "Kestrel"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"data\": true,\n    \"isSuccess\": true,\n    \"message\": \"Actualizacíón exitosa\"\n}"
+				}
+			]
+		}
+	]
+}

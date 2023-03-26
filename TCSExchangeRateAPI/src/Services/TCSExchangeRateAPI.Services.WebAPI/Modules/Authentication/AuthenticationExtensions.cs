@@ -28,7 +28,7 @@ namespace TCSExchangeRateAPI.Services.WebAPI.Modules.Authentication
                 {
                     OnTokenValidated = context =>
                     {
-                        var id = int.Parse(context.Principal.Identity.Name);
+                        var id = context.Principal.Identity.Name;
                         return Task.CompletedTask;
                     },
 

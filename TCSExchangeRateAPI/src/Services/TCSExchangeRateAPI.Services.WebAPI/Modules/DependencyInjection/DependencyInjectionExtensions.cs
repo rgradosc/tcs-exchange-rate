@@ -37,7 +37,7 @@ namespace TCSExchangeRateAPI.Services.WebAPI.Modules.DependencyInjection
             services.AddScoped<IUserDomain, UserDomain>();
 
             services.AddScoped<IUserRepository, UserRepository>();
-
+            
             return services;
         }
     }

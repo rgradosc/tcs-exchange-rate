@@ -24,6 +24,17 @@ namespace TCSExchangeRateAPI.Services.WebAPI.Modules.Swagger
                         Url = new Uri("https://www.gnulicense.com"),
                     }
                 });
+
+                config.AddSecurityDefinition("Authorization", new OpenApiSecurityScheme
+                {
+                    Description = "Authorization by API key",
+                    In = ParameterLocation.Header,
+                    Type = SecuritySchemeType.ApiKey,
+                    Name = "Authorization"
+                });
+
+                config.AddSecurityRequirement(new OpenApiSecurityRequirement());
+
             });
 
             return services;

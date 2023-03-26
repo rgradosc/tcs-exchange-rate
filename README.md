@@ -18,4 +18,4 @@ The project contains a json file containing the Postman API documentation, which
   * GET -> /api/v1/ExchangeRates/convert?Base={base}&Target={target}&Amount={amount}
   * PUT -> /api/v1/ExchangeRates
   
-*For more information, please review the documentation file using postman.*
+*For more information, please review the documentation file **TCSExchangeRatesAPI.json** using postman.*

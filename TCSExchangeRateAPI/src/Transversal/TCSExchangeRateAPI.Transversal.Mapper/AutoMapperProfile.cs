@@ -24,6 +24,8 @@ namespace TCSExchangeRateAPI.Transversal.Mapper
                 .ForMember(x => x.BaseCurrency, opt => opt.MapFrom(s => s.Base))
                 .ForMember(x => x.TargetCurrency, opt => opt.MapFrom(s => s.Target))
                 .ReverseMap();
+
+            CreateMap<User, UserDTO>();
         }
     }
 }

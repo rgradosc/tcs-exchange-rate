@@ -15,24 +15,14 @@ namespace TCSExchangeRateAPI.Domain.Core
             _exchangeRateRepository = exchangeRateRepository;
         }
 
-        public bool Insert(ExchangeRate exchangeRate)
-        {
-            return _exchangeRateRepository.Insert(exchangeRate);
-        }
-
         public bool Update(ExchangeRate exchangeRate)
         {
             return _exchangeRateRepository.Update(exchangeRate);
         }
 
-        public bool Delete(ExchangeRate exchangeRate)
+        public ExchangeRate Get(string baseCurrency, string targetCurrency)
         {
-            return _exchangeRateRepository.Delete(exchangeRate);
-        }
-
-        public ExchangeRate Get(int rateId)
-        {
-            return _exchangeRateRepository.Get(rateId);
+            return _exchangeRateRepository.Get(baseCurrency, targetCurrency);
         }
 
         public IEnumerable<ExchangeRate> GetAll()
@@ -40,24 +30,14 @@ namespace TCSExchangeRateAPI.Domain.Core
             return _exchangeRateRepository.GetAll();
         }
 
-        public async Task<bool> InsertAsync(ExchangeRate exchangeRate)
-        {
-            return await _exchangeRateRepository.InsertAsync(exchangeRate);
-        }
-
         public async Task<bool> UpdateAsync(ExchangeRate exchangeRate)
         {
             return await _exchangeRateRepository.UpdateAsync(exchangeRate);
         }
 
-        public async Task<bool> DeleteAsync(ExchangeRate exchangeRate)
+        public async Task<ExchangeRate> GetAsync(string baseCurrency, string targetCurrency)
         {
-            return await _exchangeRateRepository.DeleteAsync(exchangeRate);
-        }
-
-        public async Task<ExchangeRate> GetAsync(int rateId)
-        {
-            return await _exchangeRateRepository.GetAsync(rateId);
+            return await _exchangeRateRepository.GetAsync(baseCurrency, targetCurrency);
         }
 
         public async Task<IEnumerable<ExchangeRate>> GetAllAsync()

@@ -12,13 +12,13 @@ namespace TCSExchangeRateAPI.Domain.Entity
 
         public decimal BaseRate { get; set; }
 
-        public DateTime DateLastRate { get; set; }
+        public string DateLastRate { get; set; }
 
-        public bool Active { get; set; }
+        public string Active { get; set; }
 
         public ExchangeRate()
         {
-            DateLastRate = DateTime.Now;
+            DateLastRate = DateTime.Now.ToString("d");
         }
 
         public ExchangeRate(string baseCurrency, string targetCurrency, decimal baseRate)
@@ -26,8 +26,8 @@ namespace TCSExchangeRateAPI.Domain.Entity
             BaseCurrency = baseCurrency;
             TargetCurrency = targetCurrency;
             BaseRate = baseRate;
-            DateLastRate = DateTime.Now;
-            Active = true;
+            DateLastRate = DateTime.Now.ToString("d");
+            Active = "N";
         }
     }
 }

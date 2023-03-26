@@ -1,9 +1,11 @@
-﻿using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Mvc;
 using TCSExchangeRateAPI.Application.DTO;
 using TCSExchangeRateAPI.Application.Interfaces;
 
 namespace TCSExchangeRateAPI.Services.WebAPI.Controllers
 {
+    [Authorize]
     [Route("api/v1/[controller]")]
     [ApiController]
     public class ExchangeRatesController : Controller

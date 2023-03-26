@@ -4,12 +4,18 @@
     <TargetFramework>net6.0</TargetFramework>
     <Nullable>enable</Nullable>
     <ImplicitUsings>enable</ImplicitUsings>
+    <UserSecretsId>3dfe9ffd-b107-45d3-ab13-97b51bd25ff8</UserSecretsId>
+    <DockerDefaultTargetOS>Linux</DockerDefaultTargetOS>
+    <DockerfileContext>..\..\..</DockerfileContext>
   </PropertyGroup>
 
   <ItemGroup>
     <PackageReference Include="AutoMapper" Version="12.0.1" />
     <PackageReference Include="AutoMapper.Extensions.Microsoft.DependencyInjection" Version="12.0.0" />
+    <PackageReference Include="Microsoft.AspNetCore.Authentication.JwtBearer" Version="6.0.15" />
+    <PackageReference Include="Microsoft.AspNetCore.Mvc.NewtonsoftJson" Version="6.0.15" />
     <PackageReference Include="Microsoft.Data.Sqlite" Version="7.0.4" />
+    <PackageReference Include="Microsoft.VisualStudio.Azure.Containers.Tools.Targets" Version="1.17.2" />
     <PackageReference Include="Swashbuckle.AspNetCore" Version="6.2.3" />
   </ItemGroup>
 
@@ -22,6 +28,12 @@
     <ProjectReference Include="..\..\Infrastructure\TCSExchangeRateAPI.Infrastructure.Repository\TCSExchangeRateAPI.Infrastructure.Repository.csproj" />
     <ProjectReference Include="..\..\Transversal\TCSExchangeRateAPI.Transversal.Logging\TCSExchangeRateAPI.Transversal.Logging.csproj" />
     <ProjectReference Include="..\..\Transversal\TCSExchangeRateAPI.Transversal.Mapper\TCSExchangeRateAPI.Transversal.Mapper.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Update="tcs-exchanges-rates-db.db">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
   </ItemGroup>
 
 </Project>

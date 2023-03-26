@@ -26,4 +26,10 @@
     <ProjectReference Include="..\..\Transversal\TCSExchangeRateAPI.Transversal.Mapper\TCSExchangeRateAPI.Transversal.Mapper.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <None Update="tcs-exchanges-rates-db.db">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+  </ItemGroup>
+
 </Project>
